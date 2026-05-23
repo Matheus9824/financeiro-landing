@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Financeiro Pro — O app financeiro mais completo do Brasil. Controle total das suas finanças a partir de R$9,90.">
 <title>Financeiro Pro — Controle Financeiro Total</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+  // Track button clicks
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('a,button');
+    if(!btn) return;
+    const text = btn.textContent.trim().slice(0,30);
+    if(text) gtag('event','click',{event_category:'CTA',event_label:text});
+  });
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <style>
